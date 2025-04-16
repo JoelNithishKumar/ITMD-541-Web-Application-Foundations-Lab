@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+    <link rel="stylesheet" href="calcstyles.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <h1>Tip Calculator</h1>
+        
+        <form id="tipCalculator">
+            <!-- Currency Conversion (Extra Credit) -->
+            <div class="form-group">
+                <label for="currency">Select Currency:</label>
+                <select id="currency" class="currency-select">
+                    <option value="USD">US Dollars ($)</option>
+                    <option value="EUR">Euros (€0.95)</option>
+                    <option value="INR">Rupees (₹85)</option>
+                </select>
+            </div>
+
+            <!-- Bill Total Input -->
+            <div class="form-group">
+                <label for="billTotal">Bill Total ($):</label>
+                <input type="number" id="billTotal" step="0.01" min="0" required>
+                <div class="error-message" id="billError"></div>
+            </div>
+
+            <!-- Calculated Fields -->
+            <div class="form-group">
+                <label>Total with Tax (11%):</label>
+                <input type="text" id="totalWithTax" disabled>
+            </div>
+
+            <!-- Tip Controls -->
+            <div class="form-group">
+                <label for="tipPercent">Tip Percentage:</label>
+                <input type="range" id="tipPercent" min="0" max="100" value="15">
+                <span id="tipValue">15%</span>
+            </div>
+
+            <div class="form-group">
+                <label>Tip Amount:</label>
+                <input type="text" id="tipAmount" disabled>
+            </div>
+
+            <!-- Final Totals -->
+            <div class="form-group">
+                <label>Total with Tip & Tax:</label>
+                <input type="text" id="totalWithTipTax" disabled>
+            </div>
+
+            <!-- Currency Conversion Outputs -->
+            <div class="form-group">
+                <label>Converted Tip Amount:</label>
+                <input type="text" id="convertedTip" disabled>
+            </div>
+
+            <div class="form-group">
+                <label>Converted Total:</label>
+                <input type="text" id="convertedTotal" disabled>
+            </div>
+        </form>
+    </div>
+
+    <script src="calcscript.js"></script>
+</body>
+</html>
